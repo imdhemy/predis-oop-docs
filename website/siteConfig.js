@@ -54,8 +54,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#0e5e17',
-    secondaryColor: '#094110',
+    primaryColor: '#d82e26',
+    secondaryColor: '#a42122',
   },
 
   /* Custom fonts for website */
@@ -73,7 +73,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} @imdhemy`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

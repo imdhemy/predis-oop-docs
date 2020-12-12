@@ -60,13 +60,12 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src={`${baseUrl}img/redis.svg`} />
         <div className="inner">
           <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
           <PromoSection>
             <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('doc1.html')}>ٍRead docs</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -149,16 +148,16 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
+            content: 'Provides a collection of SOLID classes, easy to use, easy to remember!',
+            image: `${baseUrl}img/undraw_web_developer.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Modular, Object Oriented',
           },
           {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            content: 'Provides easy to remember, descriptive aliases for Redis commands',
+            image: `${baseUrl}img/undraw_right_places.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Alias Enriched Commands',
           },
         ]}
       </Block>
@@ -199,11 +198,11 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          {/*<FeatureCallout />*/}
+          {/*<LearnHow />*/}
+          {/*<TryOut />*/}
+          {/*<Description />*/}
+          {/*<Showcase />*/}
         </div>
       </div>
     );
