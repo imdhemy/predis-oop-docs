@@ -44,30 +44,30 @@ Below is a list of all available methods and their function:
     <div class="blockElement threeByGridBlock">
          <div class="blockContent">
             <ul style="list-style-type: none">
-            <li><a href="#">getTTL</a></li>
-            <li><a href="#">getTTLMs</a></li>
-            <li><a href="#">keys</a></li>
-            <li><a href="#">match</a></li>
-            <li><a href="#">pExpire</a></li>
-            <li><a href="#">pExpireAt</a></li>
-            <li><a href="#">pTTl</a></li>
-            <li><a href="#">persist</a></li>
-            <li><a href="#">randomKey</a></li>
+            <li><a href="#gettl">getTTL</a></li>
+            <li><a href="#gettlms">getTTLMs</a></li>
+            <li><a href="#keys">keys</a></li>
+            <li><a href="#match">match</a></li>
+            <li><a href="#pexpire">pExpire</a></li>
+            <li><a href="#pexpireat">pExpireAt</a></li>
+            <li><a href="#pttl">pTTl</a></li>
+            <li><a href="#persist">persist</a></li>
+            <li><a href="#randomkey">randomKey</a></li>
             </ul>
          </div>
     </div>
     <div class="blockElement threeByGridBlock">
           <div class="blockContent">
            <ul style="list-style-type: none">
-            <li><a href="#">rename</a></li>
-            <li><a href="#">renameIfAvailable</a></li>
-            <li><a href="#">renameNx</a></li>
-            <li><a href="#">restore</a></li>
-            <li><a href="#">setTTL</a></li>
-            <li><a href="#">setTTLMs</a></li>
-            <li><a href="#">touch</a></li>
-            <li><a href="#">ttl</a></li>
-            <li><a href="#">type</a></li>    
+            <li><a href="#rename">rename</a></li>
+            <li><a href="#renameifavailable">renameIfAvailable</a></li>
+            <li><a href="#renamenx">renameNx</a></li>
+            <li><a href="#restore">restore</a></li>
+            <li><a href="#setttl">setTTL</a></li>
+            <li><a href="#setttlms">setTTLMs</a></li>
+            <li><a href="#touch">touch</a></li>
+            <li><a href="#ttl">ttl</a></li>
+            <li><a href="#type">type</a></li>    
            </ul>
            </div>
     </div>
@@ -138,20 +138,129 @@ $expire = $keyManager->expireAtTimestamp($unixTimestamp);
 ```
 
 ### getTTL
+Is an alias for [ttl](#ttl).
+```php
+$ttl = $keyManager->getTTl($key);
+```
+
 ### getTTLMs
+Is an alias for [pExpire](#pexpire).
+
+```php
+$ttlMs = $keyManager->getTTlMs($key);
+```
+
 ### keys
+Returns all keys matching the specified pattern. Supported glob-style patterns:
+- `h?llo` matches hello, hallo and hxllo
+- `h*llo` matches hllo and heeeello
+- `h[ae]llo` matches hello and hallo, but not hillo
+- `h[^e]llo` matches hallo, hbllo, ... but not hello
+- `h[a-b]llo` matches hallo and hbllo
+- Use `\` to escape special characters if you want to match them verbatim.
+
+> Warning: consider <code>keys()</code> as a command that should only be used in production environments with extreme care. It may ruin performance when it is executed against large databases. 
+
+```php
+$keys = $keyManager->keys('*name*');
+```
+
 ### match
+Is an alias for [keys](#keys).
+```php
+$keys = $keyManager->match('*name');
+```
+
 ### pExpire
+This method works exactly as [expire](#expire) but the time to live of the key is specified in milliseconds instead of seconds. Returns `true` if the timeout was set.
+```php
+$expires = $keyManager->pExpire($key, 1500);
+```
+
 ### PExpireAt
+This method has the same effect and semantic as [expireAt](#expireat), but the Unix time at which the key will expire is specified in milliseconds instead of milliseconds.
+```php
+$expire = $keyManager->pExpireAt($key, 1555555555005);
+```
+
 ### pTTL
+Get the time to live in milliseconds.
+```php
+$ttlMs = $keyManager->pTTL($key);
+```
+
 ### persist
+Remove the expiration from a key. Returns `false` if the ket does not exist.
+```php
+$perist = $keyManager->persist($key);
+```
+
 ### randomKey
+Returns a random key from the keyspace, or `null` if the keyspace is empty.
+```php
+$randomKey = $keyManager->randomKey();
+```
+
 ### rename
+Renames `$key` to `$newKey`.
+```php
+$keyManager->rename($key, $newKey);
+```
+
 ### renameIfAvailable
+Is an alias for [renameNx](#renamenx).
+```php
+$renamed = $keyManager->renameIfAvailable($key, $newKey);
+```
+
 ### renameNx
+Rename a `$key`, only if the `$newKey` is available. Returns `true` if renamed.
+```php
+$renamed = $keyManager->renameNx($key, $newKey);
+```
+
 ### restore
+Create a key using the provided serialized value, previously obtained using [dump](#dump). Returns `true` if the key was restored.
+
+```php
+$dump = $keyManager->dump($key);
+$keyManager->delete($key);
+$restored = $keyManager->restore($dump);
+```
+
 ### setTTL
+This is an alias for [expire](#expire).
+```php
+$expire = $keyManager->setTTl($key, $seconds);
+```
+
 ### setTTLMs
+This is an alias for [pExpire](#pexpire).
+```php
+$expires = $keyManager->setTTLMs($key, 1500);
+```
 ### touch
+Alters the last access time of a key.
+```
+$touched = $keyManager->touch($key);
+```
 ### ttl
+Get the time to live for a key.
+- Returns how many seconds a given key will continue to be part of the dataset.
+- returns `-2` if the key does not exist.
+- returns `-1` if the key exists but has no associated expire.
+```
+$ttl = $keyManager->ttl($key);
+```
+
 ### type
+Determine the type stored at key.
+
+| Standard Type | Returned Contract |
+| --- | --- |
+| string | `Imdhemy\Redis\Contracts\DataTypes\RedisString` |
+| list | `Imdhemy\Redis\Contracts\DataTypes\RedisList` |
+| set | `Imdhemy\Redis\Contracts\DataTypes\RedisSet` |
+| zset | `Imdhemy\Redis\Contracts\DataTypes\RedisSortedSet` |
+| hash | `Imdhemy\Redis\Contracts\DataTypes\RedisHashMap` |
+| stream | `Imdhemy\Redis\Contracts\DataTypes\RedisStream` |
