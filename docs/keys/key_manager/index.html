@@ -88,30 +88,30 @@ $keyManager = <span class="hljs-keyword">new</span> KeyManager($client);
     <div class="blockElement threeByGridBlock">
          <div class="blockContent">
             <ul style="list-style-type: none">
-            <li><a href="#">getTTL</a></li>
-            <li><a href="#">getTTLMs</a></li>
-            <li><a href="#">keys</a></li>
-            <li><a href="#">match</a></li>
-            <li><a href="#">pExpire</a></li>
-            <li><a href="#">pExpireAt</a></li>
-            <li><a href="#">pTTl</a></li>
-            <li><a href="#">persist</a></li>
-            <li><a href="#">randomKey</a></li>
+            <li><a href="#gettl">getTTL</a></li>
+            <li><a href="#gettlms">getTTLMs</a></li>
+            <li><a href="#keys">keys</a></li>
+            <li><a href="#match">match</a></li>
+            <li><a href="#pexpire">pExpire</a></li>
+            <li><a href="#pexpireat">pExpireAt</a></li>
+            <li><a href="#pttl">pTTl</a></li>
+            <li><a href="#persist">persist</a></li>
+            <li><a href="#randomkey">randomKey</a></li>
             </ul>
          </div>
     </div>
     <div class="blockElement threeByGridBlock">
           <div class="blockContent">
            <ul style="list-style-type: none">
-            <li><a href="#">rename</a></li>
-            <li><a href="#">renameIfAvailable</a></li>
-            <li><a href="#">renameNx</a></li>
-            <li><a href="#">restore</a></li>
-            <li><a href="#">setTTL</a></li>
-            <li><a href="#">setTTLMs</a></li>
-            <li><a href="#">touch</a></li>
-            <li><a href="#">ttl</a></li>
-            <li><a href="#">type</a></li>    
+            <li><a href="#rename">rename</a></li>
+            <li><a href="#renameifavailable">renameIfAvailable</a></li>
+            <li><a href="#renamenx">renameNx</a></li>
+            <li><a href="#restore">restore</a></li>
+            <li><a href="#setttl">setTTL</a></li>
+            <li><a href="#setttlms">setTTLMs</a></li>
+            <li><a href="#touch">touch</a></li>
+            <li><a href="#ttl">ttl</a></li>
+            <li><a href="#type">type</a></li>    
            </ul>
            </div>
     </div>
@@ -163,21 +163,104 @@ $expire = $keyManager-&gt;expireAtDatetime($datetime);
 <pre><code class="hljs css language-php">$expire = $keyManager-&gt;expireAtTimestamp($unixTimestamp);
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="getttl"></a><a href="#getttl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTTL</h3>
+<p>Is an alias for <a href="#ttl">ttl</a>.</p>
+<pre><code class="hljs css language-php">$ttl = $keyManager-&gt;getTTl($key);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="getttlms"></a><a href="#getttlms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTTLMs</h3>
+<p>Is an alias for <a href="#pexpire">pExpire</a>.</p>
+<pre><code class="hljs css language-php">$ttlMs = $keyManager-&gt;getTTlMs($key);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="keys"></a><a href="#keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>keys</h3>
+<p>Returns all keys matching the specified pattern. Supported glob-style patterns:</p>
+<ul>
+<li><code>h?llo</code> matches hello, hallo and hxllo</li>
+<li><code>h*llo</code> matches hllo and heeeello</li>
+<li><code>h[ae]llo</code> matches hello and hallo, but not hillo</li>
+<li><code>h[^e]llo</code> matches hallo, hbllo, ... but not hello</li>
+<li><code>h[a-b]llo</code> matches hallo and hbllo</li>
+<li>Use <code>\</code> to escape special characters if you want to match them verbatim.</li>
+</ul>
+<blockquote>
+<p>Warning: consider <code>keys()</code> as a command that should only be used in production environments with extreme care. It may ruin performance when it is executed against large databases.</p>
+</blockquote>
+<pre><code class="hljs css language-php">$keys = $keyManager-&gt;keys(<span class="hljs-string">'*name*'</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="match"></a><a href="#match" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>match</h3>
+<p>Is an alias for <a href="#keys">keys</a>.</p>
+<pre><code class="hljs css language-php">$keys = $keyManager-&gt;match(<span class="hljs-string">'*name'</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="pexpire"></a><a href="#pexpire" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pExpire</h3>
+<p>This method works exactly as <a href="#expire">expire</a> but the time to live of the key is specified in milliseconds instead of seconds. Returns <code>true</code> if the timeout was set.</p>
+<pre><code class="hljs css language-php">$expires = $keyManager-&gt;pExpire($key, <span class="hljs-number">1500</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="pexpireat"></a><a href="#pexpireat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PExpireAt</h3>
+<p>This method has the same effect and semantic as <a href="#expireat">expireAt</a>, but the Unix time at which the key will expire is specified in milliseconds instead of milliseconds.</p>
+<pre><code class="hljs css language-php">$expire = $keyManager-&gt;pExpireAt($key, <span class="hljs-number">1555555555005</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="pttl"></a><a href="#pttl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pTTL</h3>
+<p>Get the time to live in milliseconds.</p>
+<pre><code class="hljs css language-php">$ttlMs = $keyManager-&gt;pTTL($key);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="persist"></a><a href="#persist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>persist</h3>
+<p>Remove the expiration from a key. Returns <code>false</code> if the ket does not exist.</p>
+<pre><code class="hljs css language-php">$perist = $keyManager-&gt;persist($key);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="randomkey"></a><a href="#randomkey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>randomKey</h3>
+<p>Returns a random key from the keyspace, or <code>null</code> if the keyspace is empty.</p>
+<pre><code class="hljs css language-php">$randomKey = $keyManager-&gt;randomKey();
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="rename"></a><a href="#rename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rename</h3>
+<p>Renames <code>$key</code> to <code>$newKey</code>.</p>
+<pre><code class="hljs css language-php">$keyManager-&gt;rename($key, $newKey);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="renameifavailable"></a><a href="#renameifavailable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>renameIfAvailable</h3>
+<p>Is an alias for <a href="#renamenx">renameNx</a>.</p>
+<pre><code class="hljs css language-php">$renamed = $keyManager-&gt;renameIfAvailable($key, $newKey);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="renamenx"></a><a href="#renamenx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>renameNx</h3>
+<p>Rename a <code>$key</code>, only if the <code>$newKey</code> is available. Returns <code>true</code> if renamed.</p>
+<pre><code class="hljs css language-php">$renamed = $keyManager-&gt;renameNx($key, $newKey);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="restore"></a><a href="#restore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>restore</h3>
+<p>Create a key using the provided serialized value, previously obtained using <a href="#dump">dump</a>. Returns <code>true</code> if the key was restored.</p>
+<pre><code class="hljs css language-php">$dump = $keyManager-&gt;dump($key);
+$keyManager-&gt;delete($key);
+$restored = $keyManager-&gt;restore($dump);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="setttl"></a><a href="#setttl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setTTL</h3>
+<p>This is an alias for <a href="#expire">expire</a>.</p>
+<pre><code class="hljs css language-php">$expire = $keyManager-&gt;setTTl($key, $seconds);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="setttlms"></a><a href="#setttlms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setTTLMs</h3>
+<p>This is an alias for <a href="#pexpire">pExpire</a>.</p>
+<pre><code class="hljs css language-php">$expires = $keyManager-&gt;setTTLMs($key, <span class="hljs-number">1500</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="touch"></a><a href="#touch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>touch</h3>
+<p>Alters the last access time of a key.</p>
+<pre><code class="hljs"><span class="hljs-variable">$touched</span> = <span class="hljs-variable">$keyManager</span>-&gt;touch(<span class="hljs-variable">$key</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="ttl"></a><a href="#ttl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ttl</h3>
+<p>Get the time to live for a key.</p>
+<ul>
+<li>Returns how many seconds a given key will continue to be part of the dataset.</li>
+<li>returns <code>-2</code> if the key does not exist.</li>
+<li>returns <code>-1</code> if the key exists but has no associated expire.</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-variable">$ttl</span> = <span class="hljs-variable">$keyManager</span>-&gt;ttl(<span class="hljs-variable">$key</span>);
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="type"></a><a href="#type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>type</h3>
+<p>Determine the type stored at key.</p>
+<table>
+<thead>
+<tr><th>Standard Type</th><th>Returned Contract</th></tr>
+</thead>
+<tbody>
+<tr><td>string</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisString</code></td></tr>
+<tr><td>list</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisList</code></td></tr>
+<tr><td>set</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisSet</code></td></tr>
+<tr><td>zset</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisSortedSet</code></td></tr>
+<tr><td>hash</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisHashMap</code></td></tr>
+<tr><td>stream</td><td><code>Imdhemy\Redis\Contracts\DataTypes\RedisStream</code></td></tr>
+</tbody>
+</table>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/predis-oop-docs/docs/keys/key"><span class="arrow-prev">← </span><span>Redis Keys</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#instantiation">Instantiation</a></li><li><a href="#available-methods">Available Methods</a><ul class="toc-headings"><li><a href="#del">del</a></li><li><a href="#delete">delete</a></li><li><a href="#delmany">delMany</a></li><li><a href="#deletemany">deleteMany</a></li><li><a href="#dump">dump</a></li><li><a href="#exists">exists</a></li><li><a href="#expire">expire</a></li><li><a href="#expireat">expireAt</a></li><li><a href="#expireatdatetime">expireAtDatetime</a></li><li><a href="#expireattimestamp">expireAtTimestamp</a></li><li><a href="#getttl">getTTL</a></li><li><a href="#getttlms">getTTLMs</a></li><li><a href="#keys">keys</a></li><li><a href="#match">match</a></li><li><a href="#pexpire">pExpire</a></li><li><a href="#pexpireat">PExpireAt</a></li><li><a href="#pttl">pTTL</a></li><li><a href="#persist">persist</a></li><li><a href="#randomkey">randomKey</a></li><li><a href="#rename">rename</a></li><li><a href="#renameifavailable">renameIfAvailable</a></li><li><a href="#renamenx">renameNx</a></li><li><a href="#restore">restore</a></li><li><a href="#setttl">setTTL</a></li><li><a href="#setttlms">setTTLMs</a></li><li><a href="#touch">touch</a></li><li><a href="#ttl">ttl</a></li><li><a href="#type">type</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 @imdhemy</section></footer></div></body></html>
