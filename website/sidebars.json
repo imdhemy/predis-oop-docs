@@ -1,6 +1,7 @@
 {
   "docs": {
     "Get Started": ["get_started"],
+    "Data Types": ["data-types/string/string"],
     "Keys": ["keys/key", "keys/key_manager"]
   }
 }
