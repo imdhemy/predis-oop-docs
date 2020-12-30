@@ -95,23 +95,85 @@ $redisString = <span class="hljs-keyword">new</span> RedisString($client, $key);
                 </ul>
             </div>
         </div>
-        <!-- Element End -->
+     <!-- Element End -->
+     <!-- Element End -->
+          <!-- Element Start -->
+             <div class="blockElement threeByGridBlock">
+                 <div class="blockContent">
+                     <ul style="list-style-type: none">
+                          <li><a href="#bitfield">bitField</a></li>
+                     </ul>
+                 </div>
+             </div>
+          <!-- Element End -->
 </div>
 <h3><a class="anchor" aria-hidden="true" id="append"></a><a href="#append" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>append</h3>
 <p>Appends a value to current string value and sets the new length of the string value.</p>
 <pre><code class="hljs css language-php">$str-&gt;set(<span class="hljs-string">'foo'</span>);
-$length = $str-&gt;getLength(); <span class="hljs-comment">// 3</span>
+$length = $redisString-&gt;getLength(); <span class="hljs-comment">// 3</span>
 
 $str-&gt;append(<span class="hljs-string">'bar'</span>);
-$length = $str-&gt;getLength(); <span class="hljs-comment">// 6</span>
+$length = $redisString-&gt;getLength(); <span class="hljs-comment">// 6</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="bitcount"></a><a href="#bitcount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bitCount</h3>
 <p>Count the number of set bits (population counting) in a string. It is possible to specify the counting operation only in an interval passing the additional arguments <code>start</code> and <code>end</code>.</p>
 <p>The arguments <code>start</code> and <code>end</code> can contain negative values in order to index bytes starting from the end of the string, where <code>-1</code> is the last byte, <code>-2</code> is the penultimate, and so forth.</p>
-<pre><code class="hljs css language-php">$str-&gt;set(<span class="hljs-string">'foobar'</span>);
+<pre><code class="hljs css language-php">$redisString-&gt;set(<span class="hljs-string">'foobar'</span>);
 
-$bitCount = $str-&gt;bitCount(); <span class="hljs-comment">// 26</span>
-$bitCount = $str-&gt;bitCount(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>); <span class="hljs-comment">// 4</span>
-$bitCount = $str-&gt;bitCount(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>); <span class="hljs-comment">// 6</span>
+$bitCount = $redisString-&gt;bitCount(); <span class="hljs-comment">// 26</span>
+$bitCount = $redisString-&gt;bitCount(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>); <span class="hljs-comment">// 4</span>
+$bitCount = $redisString-&gt;bitCount(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>); <span class="hljs-comment">// 6</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/predis-oop-docs/docs/get_started"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/predis-oop-docs/docs/keys/key"><span>Redis Keys</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#instantiation">Instantiation</a></li><li><a href="#available-methods">Available Methods</a><ul class="toc-headings"><li><a href="#append">append</a></li><li><a href="#bitcount">bitCount</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 @imdhemy</section></footer></div></body></html>
+<h3><a class="anchor" aria-hidden="true" id="bitfield"></a><a href="#bitfield" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bitField</h3>
+<p>This method treats a Redis String as an array of bits. Using this method <a href="#bitfieldset">you can set</a>, for example a signed 5 bits integer at bit offeset 1234 to a specific value, retrieve a 31 bit unsigned integer from offset 4567. Similarly the command handles increments and decrements of the specified integers, providing guaranteed and well specified overflow and underflow behavior that the user can configure.</p>
+<p><code>bitField</code> is able to operate on multiple bit fields in the same command call. It takes a list of operations to perform, and returns an array of replies, where each array matches the corresponding operation in the list of arguments.</p>
+<pre><code class="hljs css language-php"><span class="hljs-comment">// The following code increments an 5 bit signed integer at bit offset 100,</span>
+<span class="hljs-comment">// and gets the value of the 4 bit unsigned integer at bit offset 0</span>
+
+$response = $redisString-&gt;bitField(
+    RedisString::INCRBY, <span class="hljs-comment">// increment by command</span>
+    <span class="hljs-string">'i5'</span> <span class="hljs-comment">// type: 5 bit signed integer</span>
+    <span class="hljs-number">100</span>, <span class="hljs-comment">// at bit offset 100,</span>
+    <span class="hljs-number">1</span>, <span class="hljs-comment">// increment by 1</span>
+    RedisString::GET, <span class="hljs-comment">// Get command</span>
+    <span class="hljs-string">'u4'</span>, <span class="hljs-comment">// 4 bit unsigned integer</span>
+    <span class="hljs-number">0</span>, <span class="hljs-comment">// at bit offset 0</span>
+);
+</code></pre>
+<p><code>bitField</code> is variadic, you can <a href="https://redis.io/commands/bitfield#supported-subcommands-and-integer-types">add multiple commands at one time</a>, below is a list of available commands and arguments</p>
+<ul>
+<li><code>[GET type offset]</code></li>
+<li><code>[SET type offset value]</code></li>
+<li><code>[INCRBY type offset increment]</code></li>
+<li><code>[OVERFLOW WRAP|SAT|FAIL]</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bitfieldset"></a><a href="#bitfieldset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bitFieldSet</h3>
+<p>Works the same as <a href="#bitfield">bitField</a>, but uses the <code>SET</code> subcommand:</p>
+<pre><code class="hljs css language-php">$type = <span class="hljs-string">'0u8'</span>;
+$offset = <span class="hljs-string">'#0'</span>;
+$value = <span class="hljs-number">22</span>;
+
+$response = $redisString-&gt;bitFieldSet($type, $offset, $value);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bitfieldget"></a><a href="#bitfieldget" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bitFieldGet</h3>
+<p>Works the same as <a href="#bitfield">bitField</a>, but uses the <code>GET</code> subcommand, and <code>WRAP</code> as an overflow control by default:</p>
+<pre><code class="hljs css language-php">$type = <span class="hljs-string">'u8'</span>;
+$offset = <span class="hljs-string">'#0'</span>;
+
+$response = $redisString-&gt;bitFieldGet($type,$offset);
+
+<span class="hljs-comment">// You can optionally assign the overflow control as a third parameter</span>
+$response =  $redisString-&gt;bitFieldGet($type,$offset, RedisString::SAT);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bitfieldincrementby"></a><a href="#bitfieldincrementby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bitFieldIncrementBy</h3>
+<p>Works the same as <a href="#bitfield">bitField</a>, but uses the <code>INCRBY</code> subcommand, and <code>WRAP</code> as an overflow control by default:</p>
+<pre><code class="hljs css language-php">$type = <span class="hljs-string">'u8'</span>;
+$offset = <span class="hljs-string">'#0'</span>;
+$increment = <span class="hljs-number">5</span>;
+
+$response = $redisString-&gt;bitFieldIncrementBy($type, $offset, $increment);
+
+<span class="hljs-comment">// You can optionally assign the overflow control as a third parameter</span>
+$response = $redisString-&gt;bitFieldIncrementBy($type, $offset, $increment, RedisString::FAIL);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/predis-oop-docs/docs/get_started"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/predis-oop-docs/docs/keys/key"><span>Redis Keys</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#instantiation">Instantiation</a></li><li><a href="#available-methods">Available Methods</a><ul class="toc-headings"><li><a href="#append">append</a></li><li><a href="#bitcount">bitCount</a></li><li><a href="#bitfield">bitField</a></li><li><a href="#bitfieldset">bitFieldSet</a></li><li><a href="#bitfieldget">bitFieldGet</a></li><li><a href="#bitfieldincrementby">bitFieldIncrementBy</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 @imdhemy</section></footer></div></body></html>
